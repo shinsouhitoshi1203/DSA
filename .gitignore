@@ -1,0 +1,13 @@
+*.exe
+*.code-workspace
+.vscode/
+node_modules/
+/*.cpp
+/*.exe
+exercise/*
+wecode/*
+
+*.txt
+*.exe
+
+28tech
