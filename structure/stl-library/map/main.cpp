@@ -7,22 +7,23 @@ int main() {
     int n;
     cin >> n;
     
-    set <int> numbers;
-    // Declare:  set <datatype> name;
+    map <string, int> numbers;
+    // Declare:  map <datatype> name;
 
-    // set.insert();
-    // set.find(); --> pointer;
-    // set.erase();
+    // map.insert();
+    // map.find(); --> pointer;
+    // map.erase();
     // for iteration() loop;
-    // set.empty(); --> bool
+    // map.empty(); --> bool
 
     for (int i = 0; i<n; ++i) {
+        string k; cin >> k;
         int o; cin >> o;
-        numbers.insert(o);
+        numbers.insert({k, o});
     }
     
     for (auto x: numbers) {
-        cout << x << " ";
+        cout << x.first << ", " << x.second << endl;
     }
 
     /* int x; cin >> x; */
