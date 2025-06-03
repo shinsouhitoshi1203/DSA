@@ -1,17 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-struct node {
-    int value;
-    node * left = nullptr;
-    node * right = nullptr;
-
-    node * parent  = nullptr;
-};
-
 class Tree {
     private: 
+        struct node {
+            int value;
+            node * left = nullptr;
+            node * right = nullptr;
+
+            node * parent  = nullptr;
+        };
         int length = 0;
         node * head = nullptr;
 
