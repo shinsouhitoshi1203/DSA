@@ -101,7 +101,22 @@ class Tree {
             }
         }
 
+        void destroy(node * head) {
+            if (head) {
+                destroy(head->left);
+                destroy(head->right);
+                delete head;
+            }
+        }
+
     public: 
+        ~Tree() {
+            destroy(head);
+        }
+        Tree() {
+            head = nullptr;
+        }
+
         void add(int x) {
             add_traverse(head, x);
         }
@@ -111,8 +126,13 @@ class Tree {
             cout << "\n";
         }
 
-        node * &find(int x) {
-            return traverse(head, x);
+        void find(int x) {
+            auto f = traverse(head, x);
+            if (f!=nullptr) {
+                cout << "Found\n";
+            } else {
+                cout << "Not Found\n";
+            }
         }
 
         void remove(int x) {
@@ -158,12 +178,7 @@ int main() {
                 break;
             } 
             case 2: {
-                auto f = A.find(x);
-                if (f!=nullptr) {
-                    cout << "Found\n";
-                } else {
-                    cout << "Not Found\n";
-                }
+                A.find(x);
                 break;
             }
             case 3: {
